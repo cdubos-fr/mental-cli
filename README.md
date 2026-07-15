@@ -39,6 +39,19 @@ mental stats                # compter les pensées archivées par type
 Entries are appended as JSON Lines to `$XDG_DATA_HOME/mental/dump.log`
 (defaults to `~/.local/share/mental/dump.log`).
 
+## Shell completion
+
+`mental` generates completion scripts via Cobra (subcommands, flags, and
+`log --action` values). For zsh, add to `.zshrc`:
+
+```sh
+echo "autoload -U compinit; compinit" # if not already present
+mental completion zsh > "${fpath[1]}/_mental"
+```
+
+then restart your shell (or `exec zsh`). Bash, fish, and PowerShell are
+also supported — see `mental completion --help`.
+
 ## Development
 
 Tool versions (Go, just, golangci-lint, goreleaser, pre-commit, zizmor) are

@@ -55,5 +55,19 @@ func newLogCmd() *cobra.Command {
 	cmd.Flags().StringVar(&actionFilter, "action", "", "filtrer par type d'action (ex: DUMP, LOOP_DETECTED, PLOP)")
 	cmd.Flags().IntVar(&limit, "limit", 20, "nombre maximum d'entrées à afficher (0 = tout)")
 
+	_ = cmd.RegisterFlagCompletionFunc("action", func(*cobra.Command, []string, string) ([]string, cobra.ShellCompDirective) {
+		return actionLabels(), cobra.ShellCompDirectiveNoFileComp
+	})
+
 	return cmd
+}
+
+// actionLabels lists every action a thought can be logged under, action
+// commands first, PLOP last — used for shell completion of --action.
+func actionLabels() []string {
+	labels := make([]string, 0, len(actions)+1)
+	for _, a := range actions {
+		labels = append(labels, a.label)
+	}
+	return append(labels, plopLabel)
 }
