@@ -26,8 +26,15 @@ mental refactor "message"   # réécrire une pensée irrationnelle
 mental commit "message"     # verrouiller une décision, sujet clos
 mental chop "message"       # casser le rythme d'un échange qui dérape
 mental debug "message"      # signaler un bug physique/sensoriel
+mental win "message"        # logger une victoire, même petite
 
 mental plop                 # lâcher une pensée aléatoire, sans message à donner
+mental stim                 # suggérer une pause sensorielle/de régulation
+
+mental focus                # session de focus de 25 minutes (défaut)
+mental focus 10m            # durée personnalisée
+
+mental checkin "message"    # point rapide + résumé des stats juste après
 
 mental log                  # lister les dernières pensées archivées
 mental log --action dump    # filtrer par type d'action

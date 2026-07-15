@@ -63,11 +63,11 @@ func newLogCmd() *cobra.Command {
 }
 
 // actionLabels lists every action a thought can be logged under, action
-// commands first, PLOP last — used for shell completion of --action.
+// commands first — used for shell completion of --action.
 func actionLabels() []string {
-	labels := make([]string, 0, len(actions)+1)
+	labels := make([]string, 0, len(actions)+4)
 	for _, a := range actions {
 		labels = append(labels, a.label)
 	}
-	return append(labels, plopLabel)
+	return append(labels, plopLabel, stimLabel, focusLabel, checkinLabel)
 }

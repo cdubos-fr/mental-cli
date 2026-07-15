@@ -21,6 +21,9 @@ func NewRootCmd() *cobra.Command {
 		root.AddCommand(newActionCmd(a))
 	}
 	root.AddCommand(newPlopCmd())
+	root.AddCommand(newStimCmd())
+	root.AddCommand(newFocusCmd())
+	root.AddCommand(newCheckinCmd())
 	root.AddCommand(newLogCmd())
 	root.AddCommand(newStatsCmd())
 

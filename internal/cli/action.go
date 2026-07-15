@@ -67,6 +67,12 @@ var actions = []action{
 		label:  "ENVIRONMENT_DEBUG",
 		output: "⚙️ [DEBUG] Bug physique/sensoriel identifié.\nAction : Isole-toi du bruit, aère la pièce ou change d'environnement immédiatement.",
 	},
+	{
+		use:    "win",
+		short:  "Logger une victoire, même petite",
+		label:  "WIN",
+		output: "🏆 [WIN] Test passé, build vert. Ajouté au changelog des victoires.",
+	},
 }
 
 func newActionCmd(a action) *cobra.Command {
