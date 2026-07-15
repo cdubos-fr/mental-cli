@@ -1,0 +1,10 @@
+[tools]
+go = "1.26"
+just = "latest"
+golangci-lint = "latest"
+goreleaser = "latest"
+pre-commit = "latest"
+zizmor = "latest"
+
+[env]
+GOBIN = "{{config_root}}/.bin"
