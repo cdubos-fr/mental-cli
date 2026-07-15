@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - "v*"
+  # Allows the Tag workflow to dispatch this directly: a tag pushed with the
+  # default GITHUB_TOKEN does not trigger the `push: tags` event above.
+  workflow_dispatch:
 
 permissions:
   contents: write
